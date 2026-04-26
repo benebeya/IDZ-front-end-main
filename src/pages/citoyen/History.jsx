@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import CitoyenLayout from '../../components/CitoyenLayout';
-import { api } from '../../services/api';
+import { api, BASE_URL } from '../../services/api';
 import { useAuth } from '../../context/AuthContext';
 import { Download, FileText, Calendar, Search } from 'lucide-react';
 
@@ -26,7 +26,7 @@ export default function CitoyenHistory() {
   }, [user]);
 
   const handleDownload = (fileUrl) => {
-    window.open(`http://localhost:5002${fileUrl}`, '_blank');
+    window.open(`${BASE_URL}${fileUrl}`, '_blank');
   };
 
   const filteredDocs = documents.filter(doc => 

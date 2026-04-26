@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import AgentLayout from '../../components/AgentLayout';
-import { api } from '../../services/api';
+import { api, BASE_URL } from '../../services/api';
 import { FileText, ArrowRight, X, Check, ArrowLeft } from 'lucide-react';
 
 export default function AgentRequestDetail() {
@@ -107,7 +107,7 @@ export default function AgentRequestDetail() {
                     </div>
                   </div>
                   <a 
-                    href={`http://localhost:5002${piece.url}`} 
+                    href={`${BASE_URL}${piece.url}`} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-xs text-idz-action font-bold hover:underline bg-white px-3 py-1.5 rounded-lg border border-idz-action/20 shadow-sm"

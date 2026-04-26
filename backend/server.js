@@ -13,8 +13,6 @@ import bidiFactory from 'bidi-js';
 
 const bidi = bidiFactory();
 
-const FONT_PATH = 'C:\\Windows\\Fonts\\arial.ttf';
-
 function formatArabic(text) {
   if (!text) return "";
   try {
@@ -29,6 +27,7 @@ dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const FONT_PATH = path.join(__dirname, 'fonts', 'DejaVuSans.ttf');
 
 // Create uploads folder if not exists
 const uploadDir = path.join(__dirname, 'uploads');

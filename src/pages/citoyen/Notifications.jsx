@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CitoyenLayout from '../../components/CitoyenLayout';
-import { api } from '../../services/api';
+import { api, BASE_URL } from '../../services/api';
 import { Download, AlertCircle, X } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 
@@ -37,7 +37,7 @@ export default function CitoyenNotifications() {
 
   const handleDownload = (fileUrl, docName) => {
     if (fileUrl) {
-      window.open(`http://localhost:5002${fileUrl}`, '_blank');
+      window.open(`${BASE_URL}${fileUrl}`, '_blank');
     } else {
       alert(`Simulation: Téléchargement de "${docName}"...`);
     }
