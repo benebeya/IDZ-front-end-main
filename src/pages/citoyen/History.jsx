@@ -29,10 +29,10 @@ export default function CitoyenHistory() {
     window.open(`${BASE_URL}${fileUrl}`, '_blank');
   };
 
-  const filteredDocs = documents.filter(doc => 
+  const filteredDocs = Array.isArray(documents) ? documents.filter(doc => 
     doc.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     doc.requestId.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  ) : [];
 
   return (
     <CitoyenLayout>
