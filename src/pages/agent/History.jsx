@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import AgentLayout from '../../components/AgentLayout';
 import { api } from '../../services/api';
-import { Search, CheckCircle, XCircle, Eye, Calendar } from 'lucide-react';
+import { Search, CheckCircle, XCircle, Eye, Calendar, Clock } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 export default function AgentHistory() {
